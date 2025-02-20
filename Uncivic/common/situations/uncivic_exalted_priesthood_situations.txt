@@ -57,7 +57,21 @@ uncivic_exalted_priesthood_council = {
 				# kill unorthodox leaders
 				every_owned_leader = {
 					limit = { has_trait = uncivic_exalted_priesthood_leader_trait_unorthodox }
-					kill_leader = { show_notification = no }
+					random_list = {
+						50 = {
+							remove_trait = uncivic_exalted_priesthood_leader_trait_unorthodox
+							if = {
+								limit = {
+									NOT = {
+										has_trait_tier1or2 = { TRAIT = leader_trait_arrested_development }
+									}
+								}
+								add_trait = leader_trait_arrested_development
+							}
+						}
+						50 = { kill_leader = { show_notification = no } }
+					}
+					
 				}
 				every_pool_leader = {
 					limit = { has_trait = uncivic_exalted_priesthood_leader_trait_unorthodox }
@@ -102,26 +116,24 @@ uncivic_exalted_priesthood_council = {
 			every_owned_leader = {
 				limit = { has_trait = uncivic_exalted_priesthood_leader_trait_hardliner }
 				random_list = {
-					50 = {
+					75 = {
 						remove_trait = uncivic_exalted_priesthood_leader_trait_hardliner
 					}
-					50 = { kill_leader = { show_notification = no fire = yes } }
+					25 = { kill_leader = { show_notification = no fire = yes } }
 				}
 			}
 			every_pool_leader = {
 				limit = { has_trait = uncivic_exalted_priesthood_leader_trait_hardliner }
 				random_list = {
-					50 = {
+					75 = {
 						remove_trait = uncivic_exalted_priesthood_leader_trait_hardliner
 					}
-					50 = { kill_leader = { show_notification = no fire = yes } }
+					25 = { kill_leader = { show_notification = no fire = yes } }
 				}
 			}
 			# set unorthodoxy cooldown
-			set_timed_country_flag = {
-				flag = uncivic_exalted_priesthood_unorthodoxy_cooldown
-				years = 80
-			}
+			# for now, changing to untimed flag so unorthodoxy only happens once
+			set_country_flag = uncivic_exalted_priesthood_unorthodoxy_cooldown
 			# add country modifier
 			add_modifier = {
 				modifier = uncivic_exalted_priesthood_revised_orthodoxy

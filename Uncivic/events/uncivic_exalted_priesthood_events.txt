@@ -138,7 +138,7 @@ country_event = {
 					chance = value:uncivic_exalted_priesthood_heresy_removal_chance
 					set_timed_planet_flag = {
 						flag = uncivic_exalted_priesthood_planet_recently_changed
-						years = 5
+						years = 10
 					}
 					uncivic_exalted_priesthood_remove_poi = { COUNTRY = owner }
 					if = {
@@ -2333,4 +2333,27 @@ country_event = {
 		room = from.ruler
 	}
 	option = { name = ACKNOWLEDGED }
+}
+
+# another mod is forcing faith; sending any notifications / non-hidden events is the responsibility of the integrating mod
+# root = follower
+# from = head of faith
+country_event = {
+	id = uncivic_exalted_priesthood.931
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				uncivic_exalted_priesthood_can_be_follower = yes
+				from = { uncivic_exalted_priesthood_can_be_leader = yes }
+			}
+			from = { save_event_target_as = uncivic_exalted_priesthood_proposed_leader }
+			uncivic_exalted_priesthood_become_follower = yes
+			set_timed_country_flag = {
+				flag = uncivic_exalted_priesthood_faith_imposed
+				years = 10
+			}
+		}
+	}
 }
