@@ -1,0 +1,30 @@
+modifier = {
+	factor = 0
+	OR = {
+		is_fe_cluster = yes
+		is_marauder_cluster = yes
+		has_star_flag = empire_cluster
+	}
+}
+
+complex_trigger_modifier = {
+	trigger = check_galaxy_setup_value
+	parameters = {
+		setting = habitable_worlds_scale
+	}
+	mode = factor
+	mult = $VALUE$
+}
+
+# if < 1, multiply habitable_worlds_scale again, so there's more valid non-event planets to convert
+modifier = {
+	multiply = value:ish_habitable_worlds_scale
+	check_variable_arithmetic = {
+		which = value:ish_habitable_worlds_scale
+		value < 1
+	}
+}
+
+# hooks for submods
+multiply = @ish_habitable_system_mult
+multiply = @ish_habitable_worlds_mult

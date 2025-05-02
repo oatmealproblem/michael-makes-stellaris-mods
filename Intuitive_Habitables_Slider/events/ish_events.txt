@@ -1,0 +1,199 @@
+namespace = ish
+# runs before vanilla game_start events, so we don't need to handle pre_sapients and terraforming candidates
+event = {
+	id = ish.1
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		# we need a scope to save variables too,
+		# but since we're running before vanilla game_start events,
+		# global_event_country hasn't been created yet,
+		# so we just use a random planet
+		random_galaxy_planet = {
+			planet_event = {
+				id = ish.2
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = ish.2
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		# set planets_per_system to 26%+-4% * slider
+		set_variable_to_random_value = {
+			which = ish_habitable_planets_per_system
+			min = 22
+			max = 30
+		}
+		divide_variable = {
+			which = ish_habitable_planets_per_system
+			value = 100
+		}
+		multiply_variable = {
+			which = ish_habitable_planets_per_system
+			value = value:ish_habitable_worlds_scale
+		}
+		multiply_variable = {
+			which = ish_habitable_planets_per_system
+			value = @ish_habitable_worlds_mult
+		}
+		# calculate target
+		export_trigger_value_to_variable = {
+			trigger = count_system
+			variable = ish_habitable_planets_target
+		}
+		multiply_variable = {
+			which = ish_habitable_planets_target
+			value = ish_habitable_planets_per_system
+		}
+		round_variable = ish_habitable_planets_target
+		# calculate actual
+		export_trigger_value_to_variable = {
+			trigger = count_galaxy_planet
+			parameters = {
+				limit = {
+					OR = {
+						is_colonizable = yes
+						exists = owner
+					}
+				}
+			}
+			variable = ish_habitable_planets_actual
+		}
+		# calculate delta
+		set_variable = {
+			which = ish_habitable_planets_delta
+			value = ish_habitable_planets_target
+		}
+		subtract_variable = {
+			which = ish_habitable_planets_delta
+			value = ish_habitable_planets_actual
+		}
+		if = {
+			# if negative
+			limit = {
+				check_variable = {
+					which = ish_habitable_planets_delta
+					value < 0
+				}
+			}
+			# initialize tracking variables
+			set_variable = {
+				which = ish_successes
+				value = 0
+			}
+			set_variable = {
+				which = ish_planets_to_convert
+				value = ish_habitable_planets_delta
+			}
+			multiply_variable = {
+				which = ish_planets_to_convert
+				value = -1
+			}
+			# convert planets to uninhabitable until target reached or too many failures in a row
+			while = {
+				count = ish_planets_to_convert
+				limit = {
+					NOT = {
+						has_planet_flag = ish_failed
+					}
+				}
+				# set failed flag now, it will be removed if we find a valid planet
+				set_planet_flag = ish_failed
+				random_galaxy_planet = {
+					limit = {
+						ish_can_convert_to_uninhabitable = yes
+					}
+					log = "ISH convert [This.GetName] to uninhabitable"
+					ish_convert_to_uninhabitable = yes
+					# this will be useful for verifying bugs
+					set_planet_flag = ish_converted
+					prev = {
+						change_variable = {
+							which = ish_successes
+							value = 1
+						}
+						remove_planet_flag = ish_failed
+					}
+				}
+			}
+			# cleanup
+			remove_planet_flag = ish_failed
+			clear_variable = ish_successes
+			clear_variable = ish_planets_to_convert
+		}
+		else_if = {
+			# if positive
+			limit = {
+				check_variable = {
+					which = ish_habitable_planets_delta
+					value > 0
+				}
+			}
+			# initialize tracking variables
+			set_variable = {
+				which = ish_successes
+				value = 0
+			}
+			set_variable = {
+				which = ish_planets_to_convert
+				value = ish_habitable_planets_delta
+			}
+			# convert planets to habitable until target reached or too many failures in a row
+			while = {
+				count = ish_planets_to_convert
+				limit = {
+					NOT = {
+						has_planet_flag = ish_failed
+					}
+				}
+				# set failed flag now, it will be removed if we find a valid planet
+				set_planet_flag = ish_failed
+				random_galaxy_planet = {
+					limit = {
+						ish_can_convert_to_habitable = yes
+					}
+					log = "ISH convert [This.GetName] to habitable"
+					ish_convert_to_habitable = yes
+					# this will be useful for verifying bugs
+					set_planet_flag = ish_converted
+					prev = {
+						change_variable = {
+							which = ish_successes
+							value = 1
+						}
+						remove_planet_flag = ish_failed
+					}
+				}
+			}
+			# cleanup
+			remove_planet_flag = ish_failed
+			clear_variable = ish_successes
+			clear_variable = ish_planets_to_convert
+		}
+		# cleanup
+		export_trigger_value_to_variable = {
+			trigger = count_galaxy_planet
+			parameters = {
+				limit = {
+					OR = {
+						is_colonizable = yes
+						exists = owner
+					}
+				}
+			}
+			variable = ish_habitable_planets_result
+		}
+		log = "ISH actual: [This.ish_habitable_planets_actual]"
+		log = "ISH target: [This.ish_habitable_planets_target]"
+		log = "ISH result: [This.ish_habitable_planets_result]"
+		clear_variable = ish_habitable_planets_per_system
+		clear_variable = ish_habitable_planets_target
+		clear_variable = ish_habitable_planets_actual
+		clear_variable = ish_habitable_planets_delta
+		clear_variable = ish_habitable_planets_result
+	}
+}

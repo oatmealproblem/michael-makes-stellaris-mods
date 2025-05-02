@@ -1,0 +1,95 @@
+ish_habitable_worlds_scale = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = habitable_worlds_scale
+		}
+		mode = add
+	}
+}
+
+ish_habitable_worlds_scale_sqrt = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = habitable_worlds_scale
+		}
+		mode = add
+	}
+	square_root = yes
+}
+
+ish_pre_ftl_chance = {
+	base = 10
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = primitive_worlds_scale
+		}
+		mode = multiply
+	}
+}
+
+ish_habitable_min_distance = {
+	base = @habitable_min_distance
+	divide = value:ish_habitable_worlds_scale_sqrt
+}
+
+ish_habitable_max_distance = {
+	base = @habitable_max_distance
+	multiply = value:ish_habitable_worlds_scale_sqrt
+}
+
+ish_distance_from_star = {
+	base = 0
+	modifier = {
+		add = value:ish_distance_from_scope|SCOPE|orbit|
+		exists = orbit
+		orbit = {
+			is_star = yes
+		}
+	}
+	modifier = {
+		add = value:ish_distance_from_scope|SCOPE|orbit.orbit|
+		exists = orbit
+		orbit = {
+			is_star = no
+		}
+		exists = orbit.orbit
+		orbit.orbit = {
+			is_star = yes
+		}
+	}
+	modifier = {
+		add = value:ish_distance_from_scope|SCOPE|star|
+		OR = {
+			NOT = {
+				exists = orbit
+			}
+			AND = {
+				exists = orbit
+				orbit = {
+					is_star = no
+				}
+				NOT = {
+					exists = orbit.orbit
+				}
+			}
+		}
+	}
+}
+
+ish_distance_from_scope = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = distance
+		parameters = {
+			source = $SCOPE$
+			type = euclidean
+			same_solar_system = yes
+		}
+		mode = add
+	}
+}

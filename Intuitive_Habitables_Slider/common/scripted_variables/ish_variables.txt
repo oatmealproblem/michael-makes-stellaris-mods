@@ -1,0 +1,5 @@
+# multiplier for the total number of habitables in the galaxy
+@ish_habitable_worlds_mult = 1
+# multiplier for unique system habitables
+@ish_habitable_system_mult = 1
+#

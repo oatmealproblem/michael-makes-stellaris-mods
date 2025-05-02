@@ -1,0 +1,127 @@
+ish_is_special_planet = {
+	OR = {
+		AND = {
+			is_preventing_anomaly = yes
+			ish_is_generic_primitive_planet = no
+		}
+		exists = archaeological_site
+		has_anomaly = yes
+		is_terraforming_candidate = yes
+		has_planet_flag = planet_earth
+		has_planet_flag = prescripted_ideal
+		has_planet_flag = holy_world_1
+		has_planet_flag = holy_world_2
+		has_planet_flag = holy_world_3
+		has_planet_flag = holy_world_4
+		has_planet_flag = phaseshifting_active
+		# ish.1 runs before vanilla game_start events, so random pre_sapients haven't been created yet
+		# if pre_sapients do exist, there's probably something special going on
+		any_owned_pop_group = {
+			is_scope_valid = yes
+			is_pre_sapient = yes
+		}
+	}
+}
+
+ish_is_in_habitable_zone = {
+	check_variable_arithmetic = {
+		which = value:ish_distance_from_star
+		value >= value:ish_habitable_min_distance
+	}
+	check_variable_arithmetic = {
+		which = value:ish_distance_from_star
+		value <= value:ish_habitable_max_distance
+	}
+}
+
+ish_is_basic_habitable_planet = {
+	OR = {
+		is_planet_class = pc_arid
+		is_planet_class = pc_desert
+		is_planet_class = pc_savannah
+		is_planet_class = pc_continental
+		is_planet_class = pc_ocean
+		is_planet_class = pc_tropical
+		is_planet_class = pc_alpine
+		is_planet_class = pc_arctic
+		is_planet_class = pc_tundra
+		is_planet_class = pc_nuked
+		is_planet_class = pc_gaia
+		is_planet_class = pc_relic
+	}
+}
+
+ish_is_basic_uninhabitable_planet = {
+	OR = {
+		is_planet_class = pc_barren
+		is_planet_class = pc_barren_cold
+		is_planet_class = pc_frozen
+		is_planet_class = pc_molten
+		is_planet_class = pc_toxic
+	}
+}
+
+ish_is_generic_primitive_planet = {
+	OR = {
+		has_planet_flag = pre_ftl_default
+		has_planet_flag = pre_ftl_hive_mind
+	}
+	exists = owner
+	owner = {
+		is_country_type = primitive
+		has_special_pre_ftl_diplo = no
+	}
+}
+
+ish_can_convert_to_uninhabitable = {
+	# basic class
+	ish_is_basic_habitable_planet = yes
+	ish_is_special_planet = no
+	# either no owner, or generic primitive
+	OR = {
+		NOT = {
+			exists = owner
+		}
+		ish_is_generic_primitive_planet = yes
+	}
+	solar_system = {
+		# no system owner
+		NOT = {
+			exists = owner
+		}
+		# nothing special
+		NOT = {
+			is_star_class = sc_black_hole
+		}
+	}
+}
+
+ish_can_convert_to_habitable = {
+	# basic class
+	ish_is_basic_uninhabitable_planet = yes
+	ish_is_special_planet = no
+	# valid size
+	if = {
+		limit = {
+			is_moon = yes
+		}
+		planet_size >= @habitable_moon_min_size
+		planet_size <= @habitable_moon_max_size
+	}
+	else = {
+		# planets we'll randomize size when converting
+		always = yes
+	}
+	# valid distance
+	ish_is_in_habitable_zone = yes
+	solar_system = {
+		# no system owner
+		NOT = {
+			exists = owner
+		}
+		# nothing special
+		NOT = {
+			is_star_class = sc_black_hole
+		}
+	}
+}

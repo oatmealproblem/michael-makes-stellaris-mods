@@ -1,0 +1,166 @@
+ish_convert_to_habitable = {
+	optimize_memory
+	# change class
+	random_list = {
+		40 = {
+			change_pc = pc_arid
+		}
+		40 = {
+			change_pc = pc_desert
+		}
+		40 = {
+			change_pc = pc_savannah
+		}
+		40 = {
+			change_pc = pc_continental
+		}
+		40 = {
+			change_pc = pc_ocean
+		}
+		40 = {
+			change_pc = pc_tropical
+		}
+		40 = {
+			change_pc = pc_alpine
+		}
+		40 = {
+			change_pc = pc_arctic
+		}
+		40 = {
+			change_pc = pc_tundra
+		}
+		15 = {
+			change_pc = pc_nuked
+		}
+		5 = {
+			change_pc = pc_gaia
+		}
+	}
+	# set size if invalid
+	if = {
+		limit = {
+			# (note: moon size was checked before conversion)
+			is_moon = no
+			OR = {
+				planet_size < @habitable_planet_min_size
+				planet_size > @habitable_planet_max_size
+			}
+		}
+		# randomize planet size
+		set_variable_to_random_value = {
+			which = ish_planet_random_size
+			min = @habitable_planet_min_size
+			max = @habitable_planet_max_size
+			rounded = yes
+		}
+		# subtract actual size to get delta
+		subtract_variable = {
+			which = ish_planet_random_size
+			value = trigger:planet_size
+		}
+		# apply diff
+		change_planet_size = ish_planet_random_size
+		# clean up
+		clear_variable = ish_planet_random_size
+	}
+	# reroll deposits and modifiers
+	reroll_planet = yes
+	# chance to add pre-FTL
+	# (note: this mod runs before vanilla game_start events, which add pre-sapients, so no need to add those here)
+	random = {
+		chance = value:ish_pre_ftl_chance
+		solar_system = {
+			set_star_flag = primitive_system
+		}
+		prevent_anomaly = yes
+		random_list = {
+			87 = {
+				set_planet_flag = pre_ftl_default
+				generate_pre_ftls_on_planet = yes
+			}
+			13 = {
+				modifier = {
+					multiply = 0
+					NOR = {
+						has_utopia = yes
+						has_biogenesis_dlc = yes
+					}
+				}
+				set_planet_flag = pre_ftl_hive_mind
+				generate_pre_ftl_hive_on_planet = yes
+			}
+		}
+	}
+}
+
+ish_convert_to_uninhabitable = {
+	optimize_memory
+	# kill all pop groups (including pre-sentients)
+	every_owned_pop_group = {
+		kill_all_pop = yes
+	}
+	# clean up pre-ftl flags
+	if = {
+		limit = {
+			has_planet_flag = pre_ftl_default
+		}
+		remove_planet_flag = pre_ftl_default
+		solar_system = {
+			remove_star_flag = primitive_system
+		}
+	}
+	if = {
+		limit = {
+			has_planet_flag = pre_ftl_hive_mind
+		}
+		remove_planet_flag = pre_ftl_hive_mind
+		solar_system = {
+			remove_star_flag = primitive_system
+		}
+	}
+	# destroy everything
+	remove_all_buildings = yes
+	remove_all_districts = yes
+	# change pc
+	random_list = {
+		100 = {
+			modifier = {
+				multiply = 0
+				distance = {
+					source = star
+					max_distance <= @habitable_min_distance
+					type = euclidean
+					same_solar_system = yes
+				}
+			}
+			change_pc = pc_molten
+		}
+		1 = {
+			change_pc = pc_barren
+		}
+		1 = {
+			change_pc = pc_toxic
+		}
+		100 = {
+			modifier = {
+				multiply = 0
+				distance = {
+					source = star
+					min_distance >= @habitable_max_distance
+					type = euclidean
+					same_solar_system = yes
+				}
+			}
+			random_list = {
+				1 = {
+					change_pc = pc_barren_cold
+				}
+				1 = {
+					change_pc = pc_frozen
+				}
+			}
+		}
+	}
+	# reroll deposits and modifiers
+	reroll_planet = yes
+}
