@@ -14,9 +14,28 @@ hyper_relay = {
 				NOT = { has_country_flag = flash_forge_hyper_relay_activated }
 			}
 			# OVERWRITE for easier submodding
-			alloys = @shrimpai_alloys_cost
 			rare_crystals = @shrimpai_rare_crystals_cost
 			influence = @shrimpai_influence_cost
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = no
+			}
+			alloys = @shrimpai_alloys_cost
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			alloys = @shrimpai_alloys_cost
+			mult = 0.5
+		}
+		cost = {
+			trigger = {
+				country_uses_bio_ships = yes
+			}
+			food = @shrimpai_alloys_cost
+			mult = @halved_alloy_to_food_cost_ratio
 		}
 
 		upkeep = {
