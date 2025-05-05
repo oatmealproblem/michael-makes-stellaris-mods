@@ -16,10 +16,10 @@
  uncivic_exalted_priesthood_heretic_amnesty_desc: "Спорное решение об амнистии всех еретиков было принято на этой планете."
  uncivic_exalted_priesthood_leader: "Лидер галактической веры"
  uncivic_exalted_priesthood_leader_desc: "Возглавляя межнациональную веру, это Возвышенное Священство обладает значительным влиянием."
- uncivic_exalted_priesthood_leader_modifiers: "  £influence£ $mod_country_base_influence_produces_add$: §G+0.1§!\n  £diplo_weight£ $MOD_DIPLO_WEIGHT_MULT$: §G+5%§!\n  $mod_planet_administrators_upkeep_mult$: §R+10%§!" # DO NOT TRANSLATE
+ uncivic_exalted_priesthood_leader_modifiers: "  £influence£ $mod_country_base_influence_produces_add$: §G+0.1§!\n  £diplo_weight£ $MOD_DIPLO_WEIGHT_MULT$: §G+5%§!\n  $mod_planet_bureaucrats_upkeep_mult$: §R+10%§!" # DO NOT TRANSLATE
  uncivic_exalted_priesthood_follower: "Последователь галактической веры"
  uncivic_exalted_priesthood_follower_desc: "Приняв веру Возвышенного Священства, священники этого народа становятся более эффективными."
- uncivic_exalted_priesthood_follower_modifiers: "  $mod_planet_priests_unity_produces_add$: §G+1§!\n  £diplo_weight£ $MOD_DIPLO_WEIGHT_MULT$: §R-10%§!" # DO NOT TRANSLATE
+ uncivic_exalted_priesthood_follower_modifiers: "  $mod_planet_bureaucrats_unity_produces_add$: §G+1§!\n  £diplo_weight£ $MOD_DIPLO_WEIGHT_MULT$: §R-10%§!" # DO NOT TRANSLATE
  uncivic_exalted_priesthood_diversity_of_belief: "Разнообразие верований"
  uncivic_exalted_priesthood_diversity_of_belief_desc: "Приветствуя так называемых еретиков, преследуемых в других странах, новые идеи процветают в нашей империи."
  uncivic_exalted_priesthood_old_ways: "Старые пути"

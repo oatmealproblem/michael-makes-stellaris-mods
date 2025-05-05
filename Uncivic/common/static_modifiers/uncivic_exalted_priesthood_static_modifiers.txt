@@ -47,12 +47,12 @@ uncivic_exalted_priesthood_heretic_amnesty = {
 uncivic_exalted_priesthood_leader = {
 	diplo_weight_mult = 0.05
 	country_base_influence_produces_add = 0.1
-	planet_administrators_upkeep_mult = 0.10
+	planet_bureaucrats_upkeep_mult = 0.10
 }
 
 #! IMPORTANT: if changing this, also update loc uncivic_exalted_priesthood_follower_modifiers
 uncivic_exalted_priesthood_follower = {
-	planet_priests_unity_produces_add = 1
+	planet_bureaucrats_unity_produces_add = 1
 	diplo_weight_mult = -0.10
 }
 

@@ -7,7 +7,7 @@ uncivic_parliamentary_system_can_rig_election = {
 				NOT = { is_pop_faction_type = $FACTION$ }
 			}
 		}
-		any_owned_pop = {
+		any_owned_pop_group = {
 			exists = pop_faction
 			pop_faction = {
 				is_pop_faction_type = $FACTION$
@@ -49,21 +49,5 @@ uncivic_parliamentary_system_has_representative = {
 		has_modifier = uncivic_parliamentary_system_labourites
 		has_modifier = uncivic_parliamentary_system_manufacturers
 		has_modifier = uncivic_parliamentary_system_socialists
-		# divided loyalties
-		has_modifier = uncivic_parliamentary_system_aristocrat
-		has_modifier = uncivic_parliamentary_system_indentured
-		has_modifier = uncivic_parliamentary_system_elitist
-		has_modifier = uncivic_parliamentary_system_labourite
-		has_modifier = uncivic_parliamentary_system_adopter
-		has_modifier = uncivic_parliamentary_system_perfectionist
-		has_modifier = uncivic_parliamentary_system_survivalist
-		has_modifier = uncivic_parliamentary_system_warmaker
-		has_modifier = uncivic_parliamentary_system_activist
-		has_modifier = uncivic_parliamentary_system_industrialist_divided_loyalties
-		has_modifier = uncivic_parliamentary_system_crusader
-		has_modifier = uncivic_parliamentary_system_shepherd
-		has_modifier = uncivic_parliamentary_system_holistic
-		has_modifier = uncivic_parliamentary_system_preservationist
-		has_modifier = uncivic_parliamentary_system_enslaver
 	}
 }

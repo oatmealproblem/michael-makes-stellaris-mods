@@ -1,8 +1,3 @@
 ﻿l_simp_chinese:
- mod_planet_technician_physics_research_produces_add: "£physics_research£ $physics_research$ from £job_technician£ [GetTechnicianPlural]" # UNTRANSLATED
- mod_planet_farmers_society_research_produces_add: "£society_research£ $society_research$ from £job_farmer£ [GetFarmerPlural]" # UNTRANSLATED
- mod_planet_miners_engineering_research_produces_add: "£engineering_research£ $engineering_research$ from £job_miner£ [GetMinerPlural]" # UNTRANSLATED
- mod_planet_soldiers_physics_research_produces_add: "£physics_research£ $physics_research$ from £job_soldier£ [GetSoldierPlural]" # UNTRANSLATED
- mod_planet_soldiers_society_research_produces_add: "£society_research£ $society_research$ from £job_soldier£ [GetSoldierPlural]" # UNTRANSLATED
- mod_planet_soldiers_engineering_research_produces_add: "£engineering_research£ $engineering_research$ from £job_soldier£ [GetSoldierPlural]" # UNTRANSLATED
+ mod_planet_engineers_unity_produces_add: "$unity_with_icon$ per $pop_group_unit$ $job_engineer_plural_with_icon$" # UNTRANSLATED
  count_agreement_trigger: "Number of Agreements$CONDITIONS$ $IS_NOT$ $COMPARATOR$ $NUM|Y$" # UNTRANSLATED

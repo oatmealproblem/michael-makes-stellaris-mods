@@ -303,7 +303,7 @@ uncivic_exalted_priesthood_leader_reaction_chance = {
 		owner = {
 			any_owned_leader = {
 				has_trait = uncivic_exalted_priesthood_leader_trait_unorthodox
-				has_level > prevprev.trigger:has_level
+				has_total_skill > prevprev.trigger:has_total_skill
 			}
 		}
 	}

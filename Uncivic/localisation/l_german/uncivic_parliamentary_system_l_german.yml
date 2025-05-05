@@ -35,13 +35,9 @@
  uncivic_parliamentary_system_separatist: "Seperatistischer Parlamentarier"
  uncivic_parliamentary_system_separatist_desc: "Dieser Planet hat einen separatistischen Politiker gewählt, der sie im Parlament vertritt."
  uncivic_parliamentary_system_well_represented: "Gut vertreten"
- uncivic_parliamentary_system_well_represented_desc: "Dieser Bewohner unterstützte den siegreichen Parlamentarier, der nun ihre Interessen in der interplanetaren Regierung vertritt."
+ uncivic_parliamentary_system_well_represented_desc: "This pop group backed the winning Parliamentarian, who now represents their interests in the interplanetary government." # UNTRANSLATED
  uncivic_parliamentary_system_uncovered_meddling: "Einmischung in die Parlamentswahl"
  uncivic_parliamentary_system_uncovered_meddling_desc: "Die Zentralregierung hat die Parlamentswahlen auf diesem Planeten manipuliert, aber es versäumt, ihre Bemühungen zu verbergen!"
-
- # deposit
- uncivic_parliamentary_system_deposit: "Parliamentary System" # UNTRANSLATED
- uncivic_parliamentary_system_deposit_desc: "This deposit manages dynamic modifiers from the planet's elected parliamentarian." # UNTRANSLATED
 
  # events
  uncivic_parliamentary_system_election: "Parlamentswahl auf [This.GetName]"
@@ -118,36 +114,6 @@
  uncivic_parliamentary_system_indentured_desc: "This planet has elected a member of the Indentured faction to represent them in Parliament." # UNTRANSLATED
  uncivic_parliamentary_system_elitist: "Elitist Parliamentarian" # UNTRANSLATED
  uncivic_parliamentary_system_elitist_desc: "This planet has elected a member of the Elitist faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_labourite: "Labourite Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_labourite_desc: "This planet has elected a member of the Labourite faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_labourite_tooltip: "Stability per Unemployed Pop: §R-10§!" # UNTRANSLATED
- uncivic_parliamentary_system_adopter: "Adopter Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_adopter_desc: "This planet has elected a member of the Adopter faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_perfectionist: "Warden Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_perfectionist_desc: "This planet has elected a member of the Warden faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_survivalist: "Survivalist Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_survivalist_desc: "This planet has elected a member of the Survivalist faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_survivalist_tooltip: "In Defensive War: $mod_planet_jobs_produces_mult&: §G+50%§!" # UNTRANSLATED
- uncivic_parliamentary_system_warmaker: "Warmaker Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_warmaker_desc: "This planet has elected a member of the Warmaker faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_warmaker_tooltip: "Stability per Year of Peace: §R-1§!" # UNTRANSLATED
- uncivic_parliamentary_system_activist: "Activist Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_activist_desc: "This planet has elected a member of the Activist faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_activist_tooltip: "At War: Stability: §R-20§!" # UNTRANSLATED
- uncivic_parliamentary_system_industrialist_divided_loyalties: "Industrialist Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_industrialist_divided_loyalties_desc: "This planet has elected a member of the Industrialist faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_crusader: "Crusader Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_crusader_desc: "This planet has elected a member of the Crusader faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_crusader_tooltip: "At War: $mod_planet_jobs_unity_produces_mult$: §G+50%§!\nAt Peace: $mod_planet_jobs_unity_produces_mult$: §R-50%§!" # UNTRANSLATED
- uncivic_parliamentary_system_shepherd: "Shepherd Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_shepherd_desc: "This planet has elected a member of the Shepherd faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_holistic: "Holistic Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_holistic_desc: "This planet has elected a member of the Holistic faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_holistic_tooltip: "Stability per Unique Species: §G+2§!\nStability per Crime: §R-1§!" # UNTRANSLATED
- uncivic_parliamentary_system_preservationist: "Preservationist Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_preservationist_desc: "This planet has elected a member of the Preservationist faction to represent them in Parliament." # UNTRANSLATED
- uncivic_parliamentary_system_enslaver: "Enslaver Parliamentarian" # UNTRANSLATED
- uncivic_parliamentary_system_enslaver_desc: "This planet has elected a member of the Enslaver faction to represent them in Parliament." # UNTRANSLATED
  uncivic_parliamentary_system_rig_election_for_capitalist: "Let's find more votes for the Capitalist politician..." # UNTRANSLATED
  uncivic_parliamentary_system_rig_election_for_conservative: "Let's find more votes for the Conservative politician..." # UNTRANSLATED
  uncivic_parliamentary_system_rig_election_for_environmentalist: "Let's find more votes for the Environmentalist politician..." # UNTRANSLATED
@@ -163,14 +129,3 @@
  uncivic_parliamentary_system_rig_election_for_aristocrat: "Let's find more votes for the Aristocrat politician..." # UNTRANSLATED
  uncivic_parliamentary_system_rig_election_for_indentured: "Let's find more votes for the Indentured politician..." # UNTRANSLATED
  uncivic_parliamentary_system_rig_election_for_elitist: "Let's find more votes for the Elitist politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_labourite: "Let's find more votes for the Labourite politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_adopter: "Let's find more votes for the Adopter politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_perfectionist: "Let's find more votes for the Warden politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_survivalist: "Let's find more votes for the Survivalist politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_warmaker: "Let's find more votes for the Warmaker politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_activist: "Let's find more votes for the Activist politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_crusader: "Let's find more votes for the Crusader politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_shepherd: "Let's find more votes for the Shepherd politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_holistic: "Let's find more votes for the Holistic politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_preservationist: "Let's find more votes for the Preservationist politician..." # UNTRANSLATED
- uncivic_parliamentary_system_rig_election_for_enslaver: "Let's find more votes for the Enslaver politician..." # UNTRANSLATED

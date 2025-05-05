@@ -32,5 +32,6 @@
     "xenoist",
     "xenomorph",
     "xenophile"
-  ]
+  ],
+  "editor.formatOnSave": false
 }

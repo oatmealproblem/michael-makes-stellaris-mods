@@ -105,9 +105,9 @@ uncivic_exalted_priesthood_has_unorthodox_reactive_trait = {
 uncivic_exalted_priesthood_has_hardliner_reactive_trait = {
 	OR = {
 		has_trait = leader_trait_survivalist # "Shield of the Empire"
-		has_trait_tier1or2or3 = { TRAIT = leader_trait_crusader }
-		has_trait_tier1or2or3 = { TRAIT = leader_trait_overseer }
-		has_trait_tier1or2or3 = { TRAIT = leader_trait_martinet }
+		has_trait_tier1or2 = { TRAIT = leader_trait_crusader }
+		has_trait_tier1or2 = { TRAIT = leader_trait_overseer }
+		has_trait_tier1or2 = { TRAIT = leader_trait_martinet }
 		has_trait = leader_trait_totalitarian # "Herald of the Empire"
 		has_trait = trait_imperial_heir
 		has_trait_tier1or2 = { TRAIT = leader_trait_stubborn }
@@ -118,7 +118,7 @@ uncivic_exalted_priesthood_has_hardliner_reactive_trait = {
 uncivic_exalted_priesthood_has_neutral_reactive_trait = {
 	OR = {
 		has_trait_tier1or2or3 = { TRAIT = leader_trait_adventurous_spirit }
-		has_trait_tier1or2 = { TRAIT = leader_trait_politician }
+		has_trait = leader_trait_politician
 		has_trait_tier1or2 = { TRAIT = leader_trait_venerated }
 		has_trait = leader_trait_educator
 		has_trait_tier1or2 = { TRAIT = leader_trait_intolerant }

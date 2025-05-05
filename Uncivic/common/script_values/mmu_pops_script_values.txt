@@ -1,10 +1,11 @@
-mmu_pops_political_power = {
+mmu_pop_group_political_power = {
 	base = 1
 	add = modifier:pop_political_power
-	multiply = value:mmu_pops_political_power_pop_cat_mult
+	multiply = value:mmu_pop_group_political_power_pop_cat_mult
+	multiply = trigger:pop_group_size
 }
 
-mmu_pops_political_power_pop_cat_mult = {
+mmu_pop_group_political_power_pop_cat_mult = {
 	base = 1
 	modifier = {
 		add = modifier:pop_cat_ruler_political_power

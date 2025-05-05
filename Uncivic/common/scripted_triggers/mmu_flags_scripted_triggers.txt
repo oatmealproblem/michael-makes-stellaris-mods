@@ -1,10 +1,10 @@
 mmu_flags_has = {
 	switch = {
 		trigger = is_scope_type
-		# note: global flags and relation flags not currently supported
 		agreement = { has_agreement_flag = $FLAG$ }
 		ambient_object = { has_ambient_object_flag = $FLAG$ }
 		army = { has_army_flag = $FLAG$ }
+		astral_rift = { has_astral_rift_flag = $FLAG$ }
 		country = { has_country_flag = $FLAG$ }
 		deposit = { has_deposit_flag = $FLAG$ }
 		design = { has_design_flag = $FLAG$ }
@@ -16,19 +16,27 @@ mmu_flags_has = {
 		leader = { has_leader_flag = $FLAG$ }
 		megastructure = { has_megastructure_flag = $FLAG$ }
 		planet = { has_planet_flag = $FLAG$ }
-		pop = { has_pop_flag = $FLAG$ }
 		pop_faction = { has_pop_faction_flag = $FLAG$ }
+		pop_group = { has_pop_group_flag = $FLAG$ }
 		sector = { has_sector_flag = $FLAG$ }
 		ship = { has_ship_flag = $FLAG$ }
 		situation = { has_situation_flag = $FLAG$ }
 		species = { has_species_flag = $FLAG$ }
+		spynetwork = { has_spynetwork_flag = $FLAG$ }
 		starbase = { has_starbase_flag = $FLAG$ }
 		war = { has_war_flag = $FLAG$ }
 		# exceptions: these do not follow the pattern has_<scope>_flag
 		archaeological_site = { has_archaeology_flag = $FLAG$ }
 		galactic_object = { has_star_flag = $FLAG$ }
-		# for some reason this throws an error
-		# spy_network = { has_spynetwork_flag = $FLAG$ }
-		default = {}
+		none = { has_global_flag = $FLAG$ }
+		storm_influence_field = {
+			# storm_influence_field doesn't support flags
+			always = no
+		}
+		default = {
+			# is_scope_type = cosmic_storm/cosmicstorm/storm all throw an error
+			# but since this is the only scope with that problem, just handle it in the default case
+			has_storm_flag = $FLAG$
+		}
 	}
 }

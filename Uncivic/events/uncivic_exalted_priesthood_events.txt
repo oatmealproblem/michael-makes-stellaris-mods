@@ -241,10 +241,10 @@ country_event = {
 							1 = {
 								modifier = {
 									factor = 0
-									num_pops < 20
+									count_owned_pop_amount = { count < 2000 }
 								}
-								random_owned_pop = { kill_pop = yes }
-								random_owned_pop = { kill_pop = yes }
+								random_owned_pop_group = { kill_single_pop = yes }
+								random_owned_pop_group = { kill_single_pop = yes }
 								create_message = {
 									type = UNCIVIC_EXALTED_PRIESTHOOD_INQUISITION_DAMAGE_TWO_POPS
 									localization = MESSAGE_UNCIVIC_EXALTED_PRIESTHOOD_INQUISITION_DAMAGE_TWO_POPS
@@ -256,9 +256,9 @@ country_event = {
 							1 = {
 								modifier = {
 									factor = 0
-									num_pops < 10
+									count_owned_pop_amount = { count < 10 }
 								}
-								random_owned_pop = { kill_pop = yes }
+								random_owned_pop_group = { kill_single_pop = yes }
 								add_planet_devastation = 20
 								create_message = {
 									type = UNCIVIC_EXALTED_PRIESTHOOD_INQUISITION_DAMAGE_POP_AND_DEVASTATION
@@ -801,7 +801,7 @@ planet_event = {
 			base = 0
 			modifier = {
 				add = 20
-				num_pops >= 20
+				count_owned_pop_amount = { count >= 20 }
 			}
 			modifier = {
 				divide = 2
@@ -865,17 +865,17 @@ planet_event = {
 		name = MAKE_IT_SO
 		add_planet_devastation = 40
 		if = {
-			limit = { num_pops >= 10 }
-			random_owned_pop = { kill_pop = yes }
+			limit = { count_owned_pop_amount = { count >= 10 } }
+			random_owned_pop_group = { kill_single_pop = yes }
 		} else_if = {
-			limit = { num_pops >= 20 }
-			random_owned_pop = { kill_pop = yes }
-			random_owned_pop = { kill_pop = yes }
+			limit = { count_owned_pop_amount = { count >= 20 } }
+			random_owned_pop_group = { kill_single_pop = yes }
+			random_owned_pop_group = { kill_single_pop = yes }
 		} else_if = {
-			limit = { num_pops >= 30 }
-			random_owned_pop = { kill_pop = yes }
-			random_owned_pop = { kill_pop = yes }
-			random_owned_pop = { kill_pop = yes }
+			limit = { count_owned_pop_amount = { count >= 30 } }
+			random_owned_pop_group = { kill_single_pop = yes }
+			random_owned_pop_group = { kill_single_pop = yes }
+			random_owned_pop_group = { kill_single_pop = yes }
 		}
 		custom_tooltip = uncivic_exalted_priesthood.421.tooltip
 		hidden_effect = {

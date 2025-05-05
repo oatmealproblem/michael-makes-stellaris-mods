@@ -18,14 +18,14 @@ Invite other spiritualist empires to join your Galactic Faith, gaining influence
 [h1]Parliamentary System[/h1]
 Planets with upgraded capitals hold Parliamentary elections every 10 years, electing a politician from one of your factions to represent them, giving the planet a modifier according to the faction. Don't like the election results? Just find some votes for the other guy, but risk upsetting the planet. Shadow Council pairs nicely with this, substantially reducing the risk.
 
-Minor incompatibility: new modded faction types do not have special planet modifiers. Built-in support for Divided Loyalties and most Ethics & Civics branches (including Bug Branch, FunEFork, and Stellaris Evolved).
+Minor incompatibility: new modded faction types do not have special planet modifiers. Built-in support for most Ethics & Civics branches (including Bug Branch, FunEFork, and Stellaris Evolved).
 
 [h1]Compatibility[/h1]
 [list]
-  [*] For Stellaris 3.14.*
+  [*] For Stellaris 4.0.*
   [*] NOT achievement compatible
   [*] Can be added to an existing game
-  [*] No overwrites, so should be compatible with most other mods. Advanced integration with Divided Loyalties and most Ethics & Civics branches (including Bug Branch, FunEFork, and Stellaris Evolved).
+  [*] No overwrites, so should be compatible with most other mods. Advanced integration with most Ethics & Civics branches (including Bug Branch, FunEFork, and Stellaris Evolved).
 [/list]
 
 [h1]Known Issues[/h1]

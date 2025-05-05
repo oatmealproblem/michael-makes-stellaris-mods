@@ -6,18 +6,6 @@
  uncivic_menu_exalted_priesthood_disabled: "£trigger_no£ Верховное Духовенство отключено"
  uncivic_menu_exalted_priesthood_tooltip: "Позволяет возглавить Галактическую Веру, а также позволяет использовать механику неортодоксальности и ереси"
 
- uncivic_menu_nationalistic_zeal_enabled: "£trigger_yes£ Рвение нации включено"
- uncivic_menu_nationalistic_zeal_disabled: "£trigger_no£ Рвение нации отключено"
- uncivic_menu_nationalistic_zeal_tooltip: "Включает механику Рвение, что приводит к Высокомерию нации или Позору нации при неверном управлении"
-
  uncivic_menu_parliamentary_system_enabled: "£trigger_yes£ Парламентская система включена"
  uncivic_menu_parliamentary_system_disabled: "£trigger_no£ Парламентская система отключена"
  uncivic_menu_parliamentary_system_tooltip: "Позволяет проводить парламентские выборы на планетах с улучшенными столицами"
-
- uncivic_menu_shadow_council_enabled: "£trigger_yes£ Теневой совет включен"
- uncivic_menu_shadow_council_disabled: "£trigger_no£ Теневой совет отключен"
- uncivic_menu_shadow_council_tooltip: "Позволяет возвысить лидеров до членов Теневого совета\nПозволяет проводить мероприятия, посвященные Теневому совету"
-
- uncivic_menu_technocracy_enabled: "£trigger_yes£ Технократия включена"
- uncivic_menu_technocracy_disabled: "£trigger_no£ Технократия отключена"
- uncivic_menu_technocracy_tooltip: "Позволяет набирать губернаторов с признаком научной компетентности"
