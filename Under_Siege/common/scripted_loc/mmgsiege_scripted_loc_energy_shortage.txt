@@ -32,27 +32,13 @@ defined_text = {
 }
 
 defined_text = {
-	name = MmgsiegeEnergyShortageAdministratorsProduces
+	name = MmgsiegeEnergyShortageBureaucratsProduces
 	random = no
 	text = {
-		localization_key = "mmgsiege_shortage_administrators_produces"
+		localization_key = "mmgsiege_shortage_bureaucrats_produces"
 		trigger = {
 			exists = owner
 			owner = { is_machine_empire = yes }
-			mmgsiege_has_resource_shortage = { RESOURCE = energy }
-		}
-	}
-	default = "BLANK_STRING"
-}
-
-defined_text = {
-	name = MmgsiegeEnergyShortageVirtualProduces
-	random = no
-	text = {
-		localization_key = "mmgsiege_shortage_virtual_produces"
-		trigger = {
-			exists = owner
-			owner = { is_virtual_empire = yes }
 			mmgsiege_has_resource_shortage = { RESOURCE = energy }
 		}
 	}

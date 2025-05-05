@@ -55,9 +55,9 @@ defined_text = {
 }
 
 defined_text = {
-	name = "MmgsiegeFoodShortageAdministratorsProduces"
+	name = "MmgsiegeFoodShortageBureaucratsProduces"
 	text = {
-		localization_key = "mmgsiege_shortage_administrators_produces"
+		localization_key = "mmgsiege_shortage_bureaucrats_produces"
 		trigger = {
 			exists = owner
 			owner = { is_hive_empire = yes is_lithoid_empire = no }

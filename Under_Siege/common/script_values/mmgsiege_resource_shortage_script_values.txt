@@ -3,8 +3,8 @@
 @mmgsiege_resource_shortage_level_4_multiply = 5
 
 @mmgsiege_resource_shortage_pop_happiness_base = -0.10
-@mmgsiege_resource_shortage_pop_growth_reduction_base = 0.20
-@mmgsiege_resource_shortage_pop_assembly_reduction_base = 0.20
+@mmgsiege_resource_shortage_pop_growth_reduction_base = -0.20
+@mmgsiege_resource_shortage_pop_assembly_reduction_base = -0.20
 @mmgsiege_resource_shortage_job_produces_base = -0.10
 @mmgsiege_resource_shortage_orbital_bombardment_minerals_base = 0.05
 @mmgsiege_resource_shortage_orbital_bombardment_energy_base = 0.10
@@ -313,30 +313,6 @@ mmgsiege_shortage_artisans_produces = {
 	}
 }
 
-mmgsiege_shortage_virtual_produces = {
-	base = 0
-	modifier = {
-		add = @mmgsiege_resource_shortage_job_produces_base
-		mmgsiege_has_resource_shortage = { RESOURCE = energy }
-	}
-	modifier = {
-		multiply = @mmgsiege_resource_shortage_level_2_multiply
-		mmgsiege_has_resource_shortage = { RESOURCE = energy LEVEL = 2 }
-	}
-	modifier = {
-		multiply = @mmgsiege_resource_shortage_level_3_multiply
-		mmgsiege_has_resource_shortage = { RESOURCE = energy LEVEL = 3 }
-	}
-	modifier = {
-		multiply = @mmgsiege_resource_shortage_level_4_multiply
-		mmgsiege_has_resource_shortage = { RESOURCE = energy LEVEL = 4 }
-	}
-	modifier = {
-		multiply = 100
-		always = $FOR_DISPLAY|yes$
-	}
-}
-
 mmgsiege_shortage_metallurgists_produces = {
 	base = 0
 	modifier = {
@@ -401,7 +377,7 @@ mmgsiege_shortage_metallurgists_produces = {
 	}
 }
 
-mmgsiege_shortage_administrators_produces = {
+mmgsiege_shortage_bureaucrats_produces = {
 	base = 0
 	modifier = {
 		add = @mmgsiege_resource_shortage_job_produces_base

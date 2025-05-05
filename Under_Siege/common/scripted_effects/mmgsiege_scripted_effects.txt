@@ -473,10 +473,15 @@ mmgsiege_calculate_stockpile_priority = {
 	}
 
 	# calc priority (num pops + deficit scale - stockpile months)
-	set_variable = {
-		which = mmgsiege_$RESOURCE$_stockpile_priority
-		value = trigger:num_pops
+	export_trigger_value_to_variable = {
+		trigger = count_owned_pop_amount
+		variable = mmgsiege_$RESOURCE$_stockpile_priority
 	}
+	divide_variable = {
+		which = mmgsiege_$RESOURCE$_stockpile_priority
+		value = 100
+	}
+	round_variable = mmgsiege_$RESOURCE$_stockpile_priority
 	change_variable = {
 		which = mmgsiege_$RESOURCE$_stockpile_priority
 		value = mmgsiege_$RESOURCE$_deficit_scale

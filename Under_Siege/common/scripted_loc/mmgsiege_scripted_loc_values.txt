@@ -31,10 +31,6 @@ defined_text = {
 	value = value:mmgsiege_shortage_pop_assembly_organic_reduction
 }
 defined_text = {
-	name = mmgsiege_shortage_virtual_produces
-	value = value:mmgsiege_shortage_virtual_produces
-}
-defined_text = {
 	name = mmgsiege_shortage_artisans_produces
 	value = value:mmgsiege_shortage_artisans_produces
 }
@@ -43,8 +39,8 @@ defined_text = {
 	value = value:mmgsiege_shortage_metallurgists_produces
 }
 defined_text = {
-	name = mmgsiege_shortage_administrators_produces
-	value = value:mmgsiege_shortage_administrators_produces
+	name = mmgsiege_shortage_bureaucrats_produces
+	value = value:mmgsiege_shortage_bureaucrats_produces
 }
 defined_text = {
 	name = mmgsiege_shortage_researchers_produces
