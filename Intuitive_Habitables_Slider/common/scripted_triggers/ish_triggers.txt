@@ -1,25 +1,293 @@
 ish_is_special_planet = {
 	OR = {
+		# general heuristics for special planets
+		# don't convert anything with an anomaly or archaeology site
+		exists = archaeological_site
+		has_anomaly = yes
+		# generally special event planets prevent random anomalies (which could potentially mess up event chains), so prevented anomalies are a good heuristic for specialness
+		# generic primitives prevent anomalies, but we DO want to be able to convert those
 		AND = {
 			is_preventing_anomaly = yes
 			ish_is_generic_primitive_planet = no
 		}
-		exists = archaeological_site
-		has_anomaly = yes
-		is_terraforming_candidate = yes
-		has_planet_flag = planet_earth
+		# never convert guaranteed habitable worlds
 		has_planet_flag = prescripted_ideal
-		has_planet_flag = holy_world_1
-		has_planet_flag = holy_world_2
-		has_planet_flag = holy_world_3
-		has_planet_flag = holy_world_4
-		has_planet_flag = phaseshifting_active
-		# ish.1 runs before vanilla game_start events, so random pre_sapients haven't been created yet
-		# if pre_sapients do exist, there's probably something special going on
+		# these flags likely indicate special content
+		has_planet_flag = pre_sapients_forbidden
+		has_planet_flag = suppress_archaeological_sites
+		has_planet_flag = colony_event
+		# these flags from mods likely indicate special content
+		has_planet_flag = forbid_guillis_planet_modifiers
+		has_planet_flag = cant_build_here # gigastructures
+		has_planet_flag = cant_target_this_planet # gigastructures
+		has_planet_flag = pd_ignore # planetary diversity
+		# mining drones can create mining stations during initialization
+		has_mining_station = yes
+		has_research_station = yes
+		has_observation_outpost = yes
+		# ish.1 runs before vanilla game_start events, so random pre_sapients and terraforming candidates haven't been created yet
+		# so assume anything with pre-sapients or terraforming is special
+		is_terraforming_candidate = yes
 		any_owned_pop_group = {
 			is_scope_valid = yes
 			is_pre_sapient = yes
 		}
+		# habitables around black holes are probably special, so leave them be
+		# conversely, adding habitables to black holes is immersion-breaking
+		solar_system = { is_star_class = sc_black_hole }
+
+		#-------------------------#
+		# VANILLA SPECIAL PLANETS #
+		#-------------------------#
+		# this is not an exhaustive list; many that are already caught by the above heuristics are omitted
+
+		# Earth
+		has_planet_flag = planet_earth
+		# Fallen Empire holy worlds
+		has_planet_flag = holy_world_1
+		has_planet_flag = holy_world_2
+		has_planet_flag = holy_world_3
+		has_planet_flag = holy_world_4
+		
+		# ancient_relics_initializers
+		# relic_system_1 "Armistice Initiative"
+		has_planet_flag = minigalaxy_planet
+		# relic_system_4 "Ruined World"
+		has_planet_flag = omnicodex_planet
+		# mechanocalibrator_system "Planetary Machinery"
+		AND = {
+			exists = event_target:mechanocalibrator_planet
+			is_same_value = event_target:mechanocalibrator_planet
+		}
+
+		# distant_stars_initializers
+		# big_rip_system
+		has_planet_flag = big_rip_planet
+		# time_loop_world_system
+		has_planet_flag = time_loop_world
+		# toxic_planet_toxic_moon "Crucible of Life"
+		AND = {
+			is_planet_class = pc_toxic
+			solar_system = { has_star_flag = toxic_moon_system }
+		}
+		# guardians_init_hatchling "Hatchling" / "Voidspawn"
+		has_planet_flag = hatchling_egg
+		# primitive_robot_system "Symmetrical Structures"
+		has_planet_flag = primitive_robot_planet
+		# superflare_system "Superflare Warning"
+		has_modifier = superflare_planet
+		# collapse_system "Vacuum Collapse" / "Dilapidated Station"
+		AND = {
+			is_planet_class = pc_gaia
+			solar_system = { has_star_flag = collapse_system }
+		}
+		# old_foes_system
+		has_planet_flag = czyrni_planet
+		has_planet_flag = pyorun_planet
+		# living_planet_system "Sea of Consciousness"
+		has_planet_flag = living_planet
+		# elderly_tiyanki_system
+		AND = {
+			is_planet_class = pc_gaia
+			solar_system = { has_star_flag = elderly_tiyanki_system }
+		}
+		# ratling_1_1 / ratling_1_2 / ratling_1_3
+		has_planet_flag = ratling_planet
+		# distar_phaseshift_system "Phased Planet"
+		AND = {
+			exists = event_target:phaseshift_planet
+			is_same_value = event_target:phaseshift_planet
+		}
+
+		# federations_initializers
+		# planet_with_too_many_moons_system
+		has_planet_flag = planet_with_too_many_moons
+		# wenkwort_initializer
+		solar_system = { has_star_flag = wenkwort_system } # all planets in Wenkwort are saved as global event targets
+
+		# first_contact_initializers
+		# solarpunk_01 "Helito"
+		solar_system = { has_star_flag = solarpunk_system_01 }
+		# solarpunk_02 "Dacha"
+		solar_system = { has_star_flag = solarpunk_system_02 }
+
+		# hostile_system_initializers
+		# hostile_init_16 "Tiyana Vek"
+		solar_system = { has_star_flag = tiyanki_spawn_system }
+		# hostile_init_20 "Amor Alveo"
+		solar_system = { has_star_flag = amoeba_home_system }
+		# hostile_init_21 "Tiyun Ort"
+		solar_system = { has_star_flag = tiyanki_graveyard_system }
+		# hostile_init_22 "Klendath"
+		solar_system = { has_star_flag = drone_system_4 }
+
+		# leviathans_system_initializers
+		# guardian_artist_init_01 / guardian_artist_init_02 / guardian_artist_init_03
+		solar_system = { has_star_flag = guardians_artists_system }
+		# guardians_init_dragon "Ether Drake"
+		has_planet_flag = hoard_planet
+
+		# overlord_initializers
+		# salvager_enclave_init_01 / salvager_enclave_init_02 / salvager_enclave_init_03
+		solar_system = { has_star_flag = salvager_enclave_system }
+		# orbital_ring_init_01
+		has_planet_flag = ruined_orbital_ring_planet
+
+		# paragon_initializers
+		# legendary_leader_start_site
+		solar_system = { has_star_flag = legendary_leader_spawn_system }
+		# legendary_leader_1st_site
+		solar_system = { has_star_flag = legendary_leader_1st_system }
+		# legendary_leader_2nd_site
+		solar_system = { has_star_flag = legendary_leader_2nd_system }
+		# legendary_leader_3rd_site
+		solar_system = { has_star_flag = legendary_leader_3rd_system }
+		# legendary_leader_last_site
+		solar_system = { has_star_flag = legendary_leader_final_system }
+
+		# special_system_initializers
+		# special_init_06 "Zanaam"
+		solar_system = { has_star_flag = guardians_of_zanaam }
+		# hyacinth_system
+		has_planet_flag = hyacinth_planet
+		# the_chosen_home_initializer / the_chosen_resources_initializer / the_chosen_resources_initializer2 / the_chosen_escapee_initializer
+		solar_system = { has_star_flag = chosen_system }
+		# metal_planet_system_initializer
+		has_modifier = metal_planet
+		# previously_terraformed_planet_system_initializer
+		has_modifier = previously_terraformed_planet
+		# collided_planet_system_initializer
+		has_modifier = collided_planet
+		# wooden_planet_system_initializer
+		has_modifier = wooden_planet
+
+		#------------------------#
+		# MODDED SPECIAL PLANETS #
+		#------------------------#
+
+		# Archaeology Story Pack
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=3079374348
+		# Reviewed 2025-05-12
+		# handled by heuristics
+
+		# Astro's Stellaris Overhaul - Exciting Events
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=2780233250
+		# Reviewed 2025-05-12
+		# no solar_system_initializers
+
+		# Dark Space
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=2719075597
+		# Reviewed 2025-05-12
+		# handled by heuristics
+
+		# Dynamic Political Events
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=1227620643
+		# Reviewed 2025-05-12
+		# no solar_system_initializers
+
+		# Endless Frontier: An Event Mod
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=2529105358
+		# Reviewed 2025-05-12
+		# handled by heuristics
+
+		# Ethics & Civics: Bug Branch
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=2517213262
+		# Reviewed 2025-05-12
+		# no solar_system_initializers (besides a few vanilla overwrites)
+
+		# Expanded Events
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=1641807098
+		# Reviewed 2025-05-12
+		# handled by heuristics
+
+		# Extra Events Continued
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=2807778592
+		# Reviewed 2025-05-12
+		# no solar_system_initializers
+
+		# Fatal Foundations Story Pack
+		# https://www.nexusmods.com/stellaris/mods/163
+		# Reviewed 2025-05-12
+		# hyperlane_gaia
+		solar_system = { has_star_flag = hyperlane_gaia }
+		# fatalf_new_colony_init
+		solar_system = { has_star_flag = fatalf_new_colony }
+
+		# Forgotten Empires
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=2916982793
+		# Reviewed 2025-05-12
+		# AAA_museum_init_01 / AAA_museum_init_02 / AAA_museum_init_03
+		has_planet_flag = AAA_museum_planet
+
+		# Forgotten History
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=3062038863
+		# Reviewed 2025-05-12
+		# handled by heuristics
+
+		# Gigastructural Engineering & More
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=1121692237
+		# Reviewed 2025-05-12
+		solar_system = { OR = {
+			has_star_flag = giga_o_star_system
+			has_star_flag = giga_system_one # Oxx-Oxx
+			has_star_flag = giga_system_two # Corinth
+			has_star_flag = giga_system_three # Lost Menagerie
+			has_star_flag = giga_system_four # Titan's Cradle
+			has_star_flag = giga_system_five # Ancient's Forge
+			has_star_flag = kerbol_system # Kerbol
+			has_star_flag = Paluush_system # Gatzo
+			has_star_flag = flusion_system # Jublio
+			has_star_flag = jupitwo_system # Jupitwo
+			has_star_flag = brown_dwarf_system
+			has_star_flag = brown_dwarf_system_three
+			has_star_flag = giga_flat_system
+			has_star_flag = eaw_system
+		} }
+
+		# Guilli's Planet Modifiers and Features
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=865040033
+		# Reviewed 2025-05-12
+		# handled by heuristics
+
+		# More Astral Rifts
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=3275068730
+		# Reviewed 2025-05-12
+		# no solar_system_initializers
+
+		# More Events Mod
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=727000451
+		# Reviewed 2025-05-12
+		# handled by heuristics, except some pre-FTLs
+		has_planet_flag = mem_aevum_primitive_rewind_world
+		has_planet_flag = mem_ark_homeworld
+		has_planet_flag = mem_crucible_planet
+		has_planet_flag = mem_lunar_age_planet
+		has_planet_flag = mem_orila_primitive_world
+		AND = {
+			exists = owner
+			solar_system = { has_star_flag = mem_severance_primitive_system }
+		}
+		has_planet_flag = mem_wargame_planet
+
+		# More Precursors
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=2951652477
+		# Reviewed 2025-05-12
+		# handled by heuristics
+
+		# NSC3
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=683230077
+		# Reviewed 2025-05-12
+		# no solar_system_initializers
+
+		# Planetary Diversity - Unique  Worlds
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=1740165239
+		# Reviewed 2025-05-12
+		has_planet_flag = pd_unique_world
+
+		# Unavoidable Changes
+		# https://steamcommunity.com/sharedfiles/filedetails/?id=3039922629
+		# Reviewed 2025-05-12
+		# handled by heuristics
 	}
 }
 
@@ -70,6 +338,10 @@ ish_is_generic_primitive_planet = {
 	owner = {
 		is_country_type = primitive
 		has_special_pre_ftl_diplo = no
+		NOR = {
+			has_country_flag = broken_shackles_parent_country # parent civ of Broken Shackles origin
+			has_country_flag = tech_frozen
+		}
 	}
 }
 
@@ -84,14 +356,10 @@ ish_can_convert_to_uninhabitable = {
 		}
 		ish_is_generic_primitive_planet = yes
 	}
+	# no system owner
 	solar_system = {
-		# no system owner
 		NOT = {
 			exists = owner
-		}
-		# nothing special
-		NOT = {
-			is_star_class = sc_black_hole
 		}
 	}
 }
@@ -114,14 +382,10 @@ ish_can_convert_to_habitable = {
 	}
 	# valid distance
 	ish_is_in_habitable_zone = yes
+	# no system owner
 	solar_system = {
-		# no system owner
 		NOT = {
 			exists = owner
-		}
-		# nothing special
-		NOT = {
-			is_star_class = sc_black_hole
 		}
 	}
 }

@@ -1,9 +1,9 @@
 [h1]Intuitive Habitables Slider[/h1]
 
-This mod changes the behavior of the Habitable Worlds galaxy setting, so it simply affects the total number of habitable planets in the system. In vanilla, the Habitable Worlds setting only affects planets that are not homeworlds, pre-FTLs, or guaranteed habitables, and even then it doesn't effect those planets as much as you'd expect.
+This mod changes the behavior of the Habitable Worlds galaxy setting, so it simply affects the [b]total[/b] number of habitable planets in the galaxy, and all habitable worlds (homeworld, unique, random, etc) draw from this "pool." In vanilla, the Habitable Worlds setting only affects planets that are not homeworlds, pre-FTLs, or guaranteed habitables, and even then it doesn't effect those planets as much as you'd expect.
 
 [h1]WARNING[/h1]
-If you are used to playing Stellaris with extreme Habitable Worlds settings (less than 0.5x, or more than 2x), please reconsider. The game has been lying to you. You might not be ready for the truth.
+If you are used to playing Stellaris with extreme Habitable Worlds settings (less than 0.5x, or more than 2x), please reconsider. [b]The game has been lying to you.[/b] You might not be ready for the truth.
 
 As you can see in the data below, vanilla 0.25x is actually closer to 0.5x, and not even vanilla 5x reaches 2x. Real 0.25x is bleak. Real 5x might melt your computer late game. Choose responsibly.
 
@@ -11,51 +11,44 @@ As you can see in the data below, vanilla 0.25x is actually closer to 0.5x, and 
   [tr]
     [th]Settings[/th]
     [th]Vanilla # of Habitable Worlds[/th]
-    [th]% of Default[/th]
+    [th]Vanilla Actual x[/th]
     [th]This Mod # of Habitable Worlds[/th]
-    [th]% of Default[/th]
+    [th]This Mod Actual x[/th]
   [/tr]
   [tr]
     [td]Default[/td]
     [td]159[/td]
     [td]N/A[/td]
     [td]156[/td]
-    [td]98%[/td]
+    [td]1x[/td]
   [/tr]
   [tr]
-    [td]0.5x Habitable Worlds[/td]
+    [td][b]0.5x[/b] Habitable Worlds[/td]
     [td]132[/td]
-    [td]83%[/td]
+    [td]0.8x[/td]
     [td]82[/td]
-    [td]52%[/td]
+    [td]0.5x[/td]
   [/tr]
   [tr]
     [td]
-      0.25x Habitable Worlds
-      0x Pre-FTLs and Pre-Sapients
-      0 Guaranteed Habitables
+      [b]0.25x[/b] Habitable Worlds
+      Pre-FTLs and Pre-Sapients Off
+      Guaranteed Habitables Off
     [/td]
     [td]78[/td]
-    [td]49%[/td]
+    [td]0.5x[/td]
     [td]41[/td]
-    [td]26%[/td]
+    [td]0.25x[/td]
   [/tr]
   [tr]
-    [td]5x Habitable Worlds[/td]
+    [td][b]5x[/b] Habitable Worlds[/td]
     [td]295[/td]
-    [td]186%[/td]
+    [td]1.9x[/td]
     [td]828[/td]
-    [td]521%[/td]
-  [/tr]
-  [tr]
-    [td]5x Pre-FTLs and Pre-Sapients[/td]
-    [td]208[/td]
-    [td]131%[/td]
-    [td]149[/td]
-    [td]94%[/td]
+    [td]5.2x[/td]
   [/tr]
 [/table]
-Settings not listed are default. Counts are median value from 5 random galaxies, counting all habitable worlds (uncolonized and colonized).
+Settings not listed are default. Counts are median value from 5 random galaxies, counting all habitable worlds (uncolonized and colonized). Tests last performed on Stellaris v4.0.1.
 
 [h1]How it Works[/h1]
 After galaxy generation, this mod calculates the number of habitable planets you'd expect given your habitable worlds setting and galaxy size (roughly 26 planets per 100 stars at 1x). It then compares that to what was actually generated, and dynamically creates or removes habitable worlds as needed. It never removes guaranteed habitables or adds habitables to home systems. It avoids changing any planets that have unique content (anomalies, archeology sites, event chains) associated with them. Any added habitables have a chance to spawn with pre-FTLs or pre-sapients (based on your settings).
@@ -64,14 +57,16 @@ Caveats:
 [list]
   [*] At settings less than 1x, you get fewer unique/event systems than you would with vanilla
   [*] At settings greater than 1x, this mod expands the "goldilocks" zone habitables are allowed to spawn in; the greater your setting, the more the zone is expanded
-  [*] At extremely low settings, there might not be enough planets to remove if don't also disable Guaranteed Habitables, since this mod intentionally never removed those planets
+  [*] At extremely low settings, there might not be enough planets to remove if you don't also disable Guaranteed Habitables, since this mod intentionally never removes those planets
 [/list]
 
 [h1]Compatibility[/h1]
 [list]
   [*] For Stellaris 4.0.*
   [*] NOT achievement compatible
-  [*] Should be fully compatibility with all other mods, but there is a small chance it could break event chains associated with unique systems/planets. Pleae report any issues.
+  [*] Compatible with Planetary Diversity
+  [*] Compatible with Real Space
+  [*] Should be fully compatibility with all other mods. [url=https://steamcommunity.com/workshop/filedetails/discussion/3476554363/596274776810467530/]See this discussion for more information.[/url]
 [/list]
 
 [h1]Sharing[/h1]
