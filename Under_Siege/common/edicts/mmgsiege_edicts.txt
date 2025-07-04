@@ -21,7 +21,6 @@ mmgsiege_stockpile_automation = {
 		}
 	}
 	potential = {
-		roci_shipping_module_active = no
 		NOT = { has_country_flag = mmgsiege_stockpile_automation_alt }
 	}
 	allow = {
@@ -53,89 +52,8 @@ mmgsiege_stockpile_automation_alt = {
 			consumer_goods = 1
 			multiplier = mmgsiege_consumer_goods_stockpile_budget
 		}
-		upkeep = {
-			energy = 1
-			multiplier = mmgsiege_stockpile_budget_shipping_cost
-		}
 	}
 	potential = {
-		roci_shipping_module_active = no
-		has_country_flag = mmgsiege_stockpile_automation_alt
-	}
-	allow = {
-		NOT = { has_country_flag = mmgsiege_stockpile_automation_open }
-	}
-	ai_weight = {
-		weight = 0
-	}
-}
-
-mmgsiege_stockpile_automation_with_shipping = {
-	icon = "GFX_edict_type_time"
-	length = -1
-	resources = {
-		category = mmgsiege_stockpile_budget
-		upkeep = {
-			energy = 1
-			multiplier = mmgsiege_energy_stockpile_budget
-		}
-		upkeep = {
-			minerals = 1
-			multiplier = mmgsiege_minerals_stockpile_budget
-		}
-		upkeep = {
-			food = 1
-			multiplier = mmgsiege_food_stockpile_budget
-		}
-		upkeep = {
-			consumer_goods = 1
-			multiplier = mmgsiege_consumer_goods_stockpile_budget
-		}
-		upkeep = {
-			energy = 1
-			multiplier = mmgsiege_stockpile_budget_shipping_cost
-		}
-	}
-	potential = {
-		roci_shipping_module_active = yes
-		NOT = { has_country_flag = mmgsiege_stockpile_automation_alt }
-	}
-	allow = {
-		NOT = { has_country_flag = mmgsiege_stockpile_automation_open }
-	}
-	ai_weight = {
-		weight = 0
-	}
-}
-
-mmgsiege_stockpile_automation_with_shipping_alt = {
-	icon = "GFX_edict_type_time"
-	length = -1
-	resources = {
-		category = mmgsiege_stockpile_budget
-		upkeep = {
-			energy = 1
-			multiplier = mmgsiege_energy_stockpile_budget
-		}
-		upkeep = {
-			minerals = 1
-			multiplier = mmgsiege_minerals_stockpile_budget
-		}
-		upkeep = {
-			food = 1
-			multiplier = mmgsiege_food_stockpile_budget
-		}
-		upkeep = {
-			consumer_goods = 1
-			multiplier = mmgsiege_consumer_goods_stockpile_budget
-		}
-		upkeep = {
-			energy = 1
-			multiplier = mmgsiege_stockpile_budget_shipping_cost
-		}
-	}
-	potential = {
-		roci_shipping_module_active = yes
 		has_country_flag = mmgsiege_stockpile_automation_alt
 	}
 	allow = {
@@ -156,8 +74,6 @@ mmgsiege_manage_stockpile_automation = {
 		NOR = {
 			has_edict = mmgsiege_stockpile_automation
 			has_edict = mmgsiege_stockpile_automation_alt
-			has_edict = mmgsiege_stockpile_automation_with_shipping
-			has_edict = mmgsiege_stockpile_automation_with_shipping_alt
 			has_country_flag = mmgsiege_stockpile_automation_open
 		}
 	}

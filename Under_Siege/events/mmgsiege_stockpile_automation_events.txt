@@ -144,14 +144,12 @@ country_event = {
 					is_ai = yes # AI don't use the edict
 					has_edict = mmgsiege_stockpile_automation
 					has_edict = mmgsiege_stockpile_automation_alt
-					has_edict = mmgsiege_stockpile_automation_with_shipping
-					has_edict = mmgsiege_stockpile_automation_with_shipping_alt
 				}
 			}
-			mmgsiege_allocate_stockpile_budget = { RESOURCE = energy SHIPPING_COST = @base_shipping_cost }
-			mmgsiege_allocate_stockpile_budget = { RESOURCE = minerals SHIPPING_COST = @base_shipping_cost }
-			mmgsiege_allocate_stockpile_budget = { RESOURCE = food SHIPPING_COST = @base_shipping_cost }
-			mmgsiege_allocate_stockpile_budget = { RESOURCE = consumer_goods SHIPPING_COST = @adv_shipping_cost }
+			mmgsiege_allocate_stockpile_budget = { RESOURCE = energy }
+			mmgsiege_allocate_stockpile_budget = { RESOURCE = minerals }
+			mmgsiege_allocate_stockpile_budget = { RESOURCE = food }
+			mmgsiege_allocate_stockpile_budget = { RESOURCE = consumer_goods }
 		}
 		# zero out if edict is off
 		if = {
@@ -159,8 +157,6 @@ country_event = {
 				NOR = {
 					has_edict = mmgsiege_stockpile_automation
 					has_edict = mmgsiege_stockpile_automation_alt
-					has_edict = mmgsiege_stockpile_automation_with_shipping
-					has_edict = mmgsiege_stockpile_automation_with_shipping_alt
 				}
 			}
 			set_variable = { which = mmgsiege_energy_stockpile_budget_last_month value = 0 }
@@ -173,15 +169,6 @@ country_event = {
 		mmgsiege_set_stockpile_budget_from_percent = { RESOURCE = minerals }
 		mmgsiege_set_stockpile_budget_from_percent = { RESOURCE = food }
 		mmgsiege_set_stockpile_budget_from_percent = { RESOURCE = consumer_goods }
-		# shipping costs
-		mmgsiege_calculate_stockpile_budget_shipping_cost = yes
-		if = {
-			limit = {
-				is_ai = yes
-				roci_shipping_module_active = yes
-			}
-			mmgsiege_scale_ai_budget_by_shipping_cost = yes
-		}
 	}
 }
 
@@ -289,8 +276,6 @@ country_event = {
 				RESOURCE = consumer_goods
 				PERCENT = 20
 			}
-
-			mmgsiege_calculate_stockpile_budget_shipping_cost = yes
 		}
 	}
 }

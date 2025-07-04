@@ -13,15 +13,10 @@ mmgsiege_increase_energy_stockpile_10 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_base_10
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = energy
 				AMOUNT = 10
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = yes
 			}
 		}
@@ -43,15 +38,10 @@ mmgsiege_increase_energy_stockpile_100 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_base_100
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = energy
 				AMOUNT = 100
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = yes
 			}
 		}
@@ -73,15 +63,10 @@ mmgsiege_increase_energy_stockpile_1000 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_base_1000
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = energy
 				AMOUNT = 1000
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = yes
 			}
 		}
@@ -185,15 +170,10 @@ mmgsiege_increase_minerals_stockpile_10 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_base_10
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = minerals
 				AMOUNT = 10
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -215,15 +195,10 @@ mmgsiege_increase_minerals_stockpile_100 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_base_100
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = minerals
 				AMOUNT = 100
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -245,15 +220,10 @@ mmgsiege_increase_minerals_stockpile_1000 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_base_1000
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = minerals
 				AMOUNT = 1000
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -357,15 +327,10 @@ mmgsiege_increase_food_stockpile_10 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_base_10
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = food
 				AMOUNT = 10
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -387,15 +352,10 @@ mmgsiege_increase_food_stockpile_100 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_base_100
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = food
 				AMOUNT = 100
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -417,15 +377,10 @@ mmgsiege_increase_food_stockpile_1000 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_base_1000
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = food
 				AMOUNT = 1000
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -529,15 +484,10 @@ mmgsiege_increase_consumer_goods_stockpile_10 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_adv_10
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = consumer_goods
 				AMOUNT = 10
-				SHIPPING_COST = @adv_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -559,15 +509,10 @@ mmgsiege_increase_consumer_goods_stockpile_100 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_adv_100
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = consumer_goods
 				AMOUNT = 100
-				SHIPPING_COST = @adv_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -589,15 +534,10 @@ mmgsiege_increase_consumer_goods_stockpile_1000 = {
 		}
 	}
 	effect = {
-		if = {
-			limit = { roci_shipping_module_active = yes }
-			custom_tooltip = mmgsiege_shipping_cost_adv_1000
-		}
 		hidden_effect = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = consumer_goods
 				AMOUNT = 1000
-				SHIPPING_COST = @adv_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -700,13 +640,8 @@ mmgsiege_max_energy_stockpile = {
 	}
 	effect = {
 		hidden_effect = {
-			if = {
-				limit = { roci_shipping_module_active = yes }
-				custom_tooltip = mmgsiege_shipping_cost_energy_max
-			}
 			mmgsiege_max_stockpile = {
 				RESOURCE = energy
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = yes
 			}
 		}
@@ -729,13 +664,8 @@ mmgsiege_max_minerals_stockpile = {
 	}
 	effect = {
 		hidden_effect = {
-			if = {
-				limit = { roci_shipping_module_active = yes }
-				custom_tooltip = mmgsiege_shipping_cost_minerals_max
-			}
 			mmgsiege_max_stockpile = {
 				RESOURCE = minerals
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -758,13 +688,8 @@ mmgsiege_max_food_stockpile = {
 	}
 	effect = {
 		hidden_effect = {
-			if = {
-				limit = { roci_shipping_module_active = yes }
-				custom_tooltip = mmgsiege_shipping_cost_food_max
-			}
 			mmgsiege_max_stockpile = {
 				RESOURCE = food
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = no
 			}
 		}
@@ -787,13 +712,8 @@ mmgsiege_max_consumer_goods_stockpile = {
 	}
 	effect = {
 		hidden_effect = {
-			if = {
-				limit = { roci_shipping_module_active = yes }
-				custom_tooltip = mmgsiege_shipping_cost_consumer_goods_max
-			}
 			mmgsiege_max_stockpile = {
 				RESOURCE = consumer_goods
-				SHIPPING_COST = @base_shipping_cost
 				ENERGY = no
 			}
 		}

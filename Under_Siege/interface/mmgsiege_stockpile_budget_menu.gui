@@ -340,20 +340,6 @@ guiTypes = {
 				effect = mmgsiege_increase_energy_budget_10
 				# shortCut = j
 			}
-			effectbuttonType = {
-				name = mmgsiege_energy_budget_shipping_cost
-				# quadTextureSprite = "GFX_mmgsiege_bounty_square"
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 285 y = -142 }
-				size = { x = 200 y = 32 }
-				scale = 1
-				buttonFont = cg_16b
-				buttonText = mmgsiege_energy_budget_shipping_cost
-				orientation = CENTER_LEFT
-				format = left
-				effect = mmgsiege_budget_shipping_cost
-				# shortCut = j
-			}
 
 			############
 			# MINERALS #
@@ -391,20 +377,6 @@ guiTypes = {
 				buttonText = "+10%"
 				orientation = CENTER_LEFT
 				effect = mmgsiege_increase_minerals_budget_10
-				# shortCut = j
-			}
-			effectbuttonType = {
-				name = mmgsiege_minerals_budget_shipping_cost
-				# quadTextureSprite = "GFX_mmgsiege_bounty_square"
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 285 y = -112 }
-				size = { x = 200 y = 32 }
-				scale = 1
-				buttonFont = cg_16b
-				buttonText = mmgsiege_minerals_budget_shipping_cost
-				orientation = CENTER_LEFT
-				format = left
-				effect = mmgsiege_budget_shipping_cost
 				# shortCut = j
 			}
 
@@ -446,20 +418,6 @@ guiTypes = {
 				effect = mmgsiege_increase_food_budget_10
 				# shortCut = j
 			}
-			effectbuttonType = {
-				name = mmgsiege_food_budget_shipping_cost
-				# quadTextureSprite = "GFX_mmgsiege_bounty_square"
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 285 y = -82 }
-				size = { x = 200 y = 32 }
-				scale = 1
-				buttonFont = cg_16b
-				buttonText = mmgsiege_food_budget_shipping_cost
-				orientation = CENTER_LEFT
-				format = left
-				effect = mmgsiege_budget_shipping_cost
-				# shortCut = j
-			}
 
 			##################
 			# CONSUMER_GOODS #
@@ -497,20 +455,6 @@ guiTypes = {
 				buttonText = "+10%"
 				orientation = CENTER_LEFT
 				effect = mmgsiege_increase_consumer_goods_budget_10
-				# shortCut = j
-			}
-			effectbuttonType = {
-				name = mmgsiege_consumer_goods_budget_shipping_cost
-				# quadTextureSprite = "GFX_mmgsiege_bounty_square"
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				position = { x = 285 y = -52 }
-				size = { x = 200 y = 32 }
-				scale = 1
-				buttonFont = cg_16b
-				buttonText = mmgsiege_consumer_goods_budget_shipping_cost
-				orientation = CENTER_LEFT
-				format = left
-				effect = mmgsiege_budget_shipping_cost
 				# shortCut = j
 			}
 

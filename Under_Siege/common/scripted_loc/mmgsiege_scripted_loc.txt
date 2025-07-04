@@ -1,48 +1,4 @@
 defined_text = {
-	name = GetEnergyStockpile
-	text = {
-		localization_key = "[This.mmgsiege_energy_stockpile]"
-		trigger = {
-			is_variable_set = mmgsiege_energy_stockpile
-		}
-	}
-	default = "mmgsiege_zero"
-}
-
-defined_text = {
-	name = GetMineralsStockpile
-	text = {
-		localization_key = "[This.mmgsiege_minerals_stockpile]"
-		trigger = {
-			is_variable_set = mmgsiege_minerals_stockpile
-		}
-	}
-	default = "mmgsiege_zero"
-}
-
-defined_text = {
-	name = GetFoodStockpile
-	text = {
-		localization_key = "[This.mmgsiege_food_stockpile]"
-		trigger = {
-			is_variable_set = mmgsiege_food_stockpile
-		}
-	}
-	default = "mmgsiege_zero"
-}
-
-defined_text = {
-	name = GetConsumerGoodsStockpile
-	text = {
-		localization_key = "[This.mmgsiege_consumer_goods_stockpile]"
-		trigger = {
-			is_variable_set = mmgsiege_consumer_goods_stockpile
-		}
-	}
-	default = "mmgsiege_zero"
-}
-
-defined_text = {
 	name = MmgsiegeEnergyShortageStatus
 	random = no
 	text = {
@@ -165,7 +121,7 @@ defined_text = {
 		localization_key = "mmgsiege_shortage_substatus_produced_locally"
 		trigger = {
 			mmgsiege_is_under_siege = yes
-			mmgsiege_has_resource_shortage = { RESOURCE = minerals }
+			NOT = { mmgsiege_has_resource_shortage = { RESOURCE = minerals } }
 			planet_resource_compare = {
 				resource = minerals
 				type = balance
@@ -238,7 +194,7 @@ defined_text = {
 		localization_key = "mmgsiege_shortage_substatus_produced_locally"
 		trigger = {
 			mmgsiege_is_under_siege = yes
-			mmgsiege_has_resource_shortage = { RESOURCE = food }
+			NOT = { mmgsiege_has_resource_shortage = { RESOURCE = food } }
 			planet_resource_compare = {
 				resource = food
 				type = balance
@@ -311,7 +267,7 @@ defined_text = {
 		localization_key = "mmgsiege_shortage_substatus_produced_locally"
 		trigger = {
 			mmgsiege_is_under_siege = yes
-			mmgsiege_has_resource_shortage = { RESOURCE = consumer_goods }
+			NOT = { mmgsiege_has_resource_shortage = { RESOURCE = consumer_goods } }
 			planet_resource_compare = {
 				resource = consumer_goods
 				type = balance
