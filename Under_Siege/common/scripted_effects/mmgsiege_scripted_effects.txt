@@ -538,7 +538,7 @@ mmgsiege_increase_local_stockpile = {
 		# don't spend more than can fit and be afforded
 		set_variable = {
 			which = mmgsiege_$RESOURCE$_stockpile_add
-			value = value:mmgsiege_max_transferable_to_local_stockpile|RESOURCE|$RESOURCE$|ENERGY|$ENERGY$|MAX|$AMOUNT$|
+			value = value:mmgsiege_max_transferable_to_local_stockpile|RESOURCE|$RESOURCE$|MAX|$AMOUNT$|
 		}
 		# add to local stockpile
 		change_variable = {
@@ -638,7 +638,6 @@ mmgsiege_max_stockpile = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = $RESOURCE$
 				AMOUNT = mmgsiege_$RESOURCE$_amount_to_stockpile
-				ENERGY = $ENERGY$
 			}
 			clear_variable = mmgsiege_$RESOURCE$_amount_to_stockpile
 		}

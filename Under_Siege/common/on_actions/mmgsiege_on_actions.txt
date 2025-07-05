@@ -99,6 +99,13 @@ on_tech_increased = {
 	}
 }
 
+on_colonized = {
+	events = {
+		mmgsiege.11 # init stockpile maximum
+		mmgsiege.12 # init stockpile resources
+	}
+}
+
 # on_leader_unassigned = {
 # 	events = {
 # 		mmgsiege.42 # clean up under supplied leader trait / temporary leader

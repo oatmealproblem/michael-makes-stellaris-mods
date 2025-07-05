@@ -17,7 +17,6 @@ mmgsiege_increase_energy_stockpile_10 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = energy
 				AMOUNT = 10
-				ENERGY = yes
 			}
 		}
 	}
@@ -42,7 +41,6 @@ mmgsiege_increase_energy_stockpile_100 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = energy
 				AMOUNT = 100
-				ENERGY = yes
 			}
 		}
 	}
@@ -67,7 +65,6 @@ mmgsiege_increase_energy_stockpile_1000 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = energy
 				AMOUNT = 1000
-				ENERGY = yes
 			}
 		}
 	}
@@ -174,7 +171,6 @@ mmgsiege_increase_minerals_stockpile_10 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = minerals
 				AMOUNT = 10
-				ENERGY = no
 			}
 		}
 	}
@@ -199,7 +195,6 @@ mmgsiege_increase_minerals_stockpile_100 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = minerals
 				AMOUNT = 100
-				ENERGY = no
 			}
 		}
 	}
@@ -224,7 +219,6 @@ mmgsiege_increase_minerals_stockpile_1000 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = minerals
 				AMOUNT = 1000
-				ENERGY = no
 			}
 		}
 	}
@@ -331,7 +325,6 @@ mmgsiege_increase_food_stockpile_10 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = food
 				AMOUNT = 10
-				ENERGY = no
 			}
 		}
 	}
@@ -356,7 +349,6 @@ mmgsiege_increase_food_stockpile_100 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = food
 				AMOUNT = 100
-				ENERGY = no
 			}
 		}
 	}
@@ -381,7 +373,6 @@ mmgsiege_increase_food_stockpile_1000 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = food
 				AMOUNT = 1000
-				ENERGY = no
 			}
 		}
 	}
@@ -488,7 +479,6 @@ mmgsiege_increase_consumer_goods_stockpile_10 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = consumer_goods
 				AMOUNT = 10
-				ENERGY = no
 			}
 		}
 	}
@@ -513,7 +503,6 @@ mmgsiege_increase_consumer_goods_stockpile_100 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = consumer_goods
 				AMOUNT = 100
-				ENERGY = no
 			}
 		}
 	}
@@ -538,7 +527,6 @@ mmgsiege_increase_consumer_goods_stockpile_1000 = {
 			mmgsiege_increase_local_stockpile = {
 				RESOURCE = consumer_goods
 				AMOUNT = 1000
-				ENERGY = no
 			}
 		}
 	}
@@ -642,7 +630,6 @@ mmgsiege_max_energy_stockpile = {
 		hidden_effect = {
 			mmgsiege_max_stockpile = {
 				RESOURCE = energy
-				ENERGY = yes
 			}
 		}
 	}
@@ -666,7 +653,6 @@ mmgsiege_max_minerals_stockpile = {
 		hidden_effect = {
 			mmgsiege_max_stockpile = {
 				RESOURCE = minerals
-				ENERGY = no
 			}
 		}
 	}
@@ -690,7 +676,6 @@ mmgsiege_max_food_stockpile = {
 		hidden_effect = {
 			mmgsiege_max_stockpile = {
 				RESOURCE = food
-				ENERGY = no
 			}
 		}
 	}
@@ -714,7 +699,6 @@ mmgsiege_max_consumer_goods_stockpile = {
 		hidden_effect = {
 			mmgsiege_max_stockpile = {
 				RESOURCE = consumer_goods
-				ENERGY = no
 			}
 		}
 	}
