@@ -383,11 +383,11 @@ country_event = {
 					chance = value:uncivic_exalted_priesthood_leader_reaction_chance
 					random = {
 						chance = value:uncivic_exalted_priesthood_leader_unorthodox_chance
-						add_trait = uncivic_exalted_priesthood_leader_trait_unorthodox
+						add_trait = { trait = uncivic_exalted_priesthood_leader_trait_unorthodox }
 					}
 					if = {
 						limit = { NOT = { has_trait = uncivic_exalted_priesthood_leader_trait_unorthodox } }
-						add_trait = uncivic_exalted_priesthood_leader_trait_hardliner
+						add_trait = { trait = uncivic_exalted_priesthood_leader_trait_hardliner }
 					}
 				}
 			}
@@ -1927,7 +1927,7 @@ country_event = {
 						}
 					}
 					from = {
-						add_trait = uncivic_exalted_priesthood_leader_trait_hardliner
+						add_trait = { trait = uncivic_exalted_priesthood_leader_trait_hardliner }
 					}
 				}
 				25 = {
@@ -1950,7 +1950,7 @@ country_event = {
 						uncivic_exalted_priesthood_has_heresy = yes
 					}
 					from = {
-						add_trait = uncivic_exalted_priesthood_leader_trait_unorthodox
+						add_trait = { trait = uncivic_exalted_priesthood_leader_trait_unorthodox }
 					}
 				}
 			}
