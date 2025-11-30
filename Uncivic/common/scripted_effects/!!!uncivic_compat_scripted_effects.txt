@@ -1,7 +1,0 @@
-dmm_register_mod = {
-	if = {
-		limit = { always = no }
-		log = $DMM_NAME$
-		log = $DMM_FLAG$
-	}
-}

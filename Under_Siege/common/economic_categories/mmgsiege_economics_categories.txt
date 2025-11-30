@@ -1,4 +1,0 @@
-mmgsiege_stockpile_budget = {
-	parent = country
-	use_for_ai_budget = no
-}

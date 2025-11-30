@@ -1,3 +1,0 @@
-﻿l_spanish:
- mod_planet_engineers_unity_produces_add: "$unity_with_icon$ per $pop_group_unit$ $job_engineer_plural_with_icon$" # UNTRANSLATED
- count_agreement_trigger: "Number of Agreements$CONDITIONS$ $IS_NOT$ $COMPARATOR$ $NUM|Y$" # UNTRANSLATED

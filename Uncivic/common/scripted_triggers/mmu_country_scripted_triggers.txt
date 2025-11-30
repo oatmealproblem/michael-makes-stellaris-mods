@@ -1,7 +1,0 @@
-mmu_country_is_at_war_with_rival = {
-	is_at_war = yes
-	any_relation = {
-		prev = { is_rival = prev }
-		is_at_war_with = prev
-	}
-}
