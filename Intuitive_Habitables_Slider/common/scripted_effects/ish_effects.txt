@@ -35,6 +35,13 @@ ish_convert_to_habitable = {
 		5 = {
 			change_pc = pc_gaia
 		}
+		40 = {
+			modifier = {
+				factor = 0
+				has_infernals = no
+			}
+			change_pc = pc_volcanic
+		}
 	}
 	# set size if invalid
 	if = {

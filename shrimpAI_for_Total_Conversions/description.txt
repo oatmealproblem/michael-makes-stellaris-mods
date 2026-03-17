@@ -13,7 +13,7 @@ When using a supported total conversion, you just need to enable that mod and th
 
 [h1]Other Compatibility Notes[/h1]
 [list]
-  [*] For Stellaris 4.0.*
+  [*] For Stellaris 4.2.*
   [*] NOT achievement compatible
   [*] Can be added to an existing game, but works best if the AI has not started building hyper relays yet
   [*] Can be removed from an existing game

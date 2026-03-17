@@ -316,6 +316,7 @@ ish_is_basic_habitable_planet = {
 		is_planet_class = pc_nuked
 		is_planet_class = pc_gaia
 		is_planet_class = pc_relic
+		is_planet_class = pc_volcanic
 	}
 }
 
