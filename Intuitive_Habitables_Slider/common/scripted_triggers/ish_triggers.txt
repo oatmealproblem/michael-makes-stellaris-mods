@@ -268,6 +268,13 @@ ish_is_special_planet = {
 			solar_system = { has_star_flag = mem_severance_primitive_system }
 		}
 		has_planet_flag = mem_wargame_planet
+		# added 2026-05-28, but others not reviewed
+		solar_system.star = {
+			exists = event_target:mem_mortis_star
+			is_same_value = event_target:mem_mortis_star
+			# this system contains special worlds, but not excluded by is_preventing_anomaly or other heuristics
+			# note: this can be removed after next MEM update, which will add prevent_anomaly = yes to those planets
+		}
 
 		# More Precursors
 		# https://steamcommunity.com/sharedfiles/filedetails/?id=2951652477
