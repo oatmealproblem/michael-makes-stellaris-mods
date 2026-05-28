@@ -83,18 +83,21 @@ ish_convert_to_habitable = {
 		random_list = {
 			87 = {
 				set_planet_flag = pre_ftl_default
-				generate_pre_ftls_on_planet = yes
+				if = {
+					limit = { is_planet_class = pc_volcanic }
+					generate_pre_ftls_on_volcanic = yes
+				} else = {
+					generate_pre_ftls_on_planet = yes
+				}
 			}
 			13 = {
-				modifier = {
-					multiply = 0
-					NOR = {
-						has_utopia = yes
-						has_biogenesis_dlc = yes
-					}
-				}
 				set_planet_flag = pre_ftl_hive_mind
-				generate_pre_ftl_hive_on_planet = yes
+				if = {
+					limit = { is_planet_class = pc_volcanic }
+					generate_pre_ftl_hive_on_volcanic = yes
+				} else = {
+					generate_pre_ftl_hive_on_planet = yes
+				}
 			}
 		}
 	}
