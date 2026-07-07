@@ -11,7 +11,9 @@ hyper_relay = {
 		category = megastructures_hyper_relay
 		cost = {
 			trigger = {
-				NOT = { has_country_flag = flash_forge_hyper_relay_activated }
+				NOT = {
+					has_country_flag = flash_forge_hyper_relay_activated
+				}
 			}
 			# OVERWRITE for easier submodding
 			rare_crystals = @shrimpai_rare_crystals_cost
@@ -19,12 +21,18 @@ hyper_relay = {
 		}
 		cost = {
 			trigger = {
+				NOT = {
+					has_country_flag = flash_forge_hyper_relay_activated
+				}
 				country_uses_bio_ships = no
 			}
 			alloys = @shrimpai_alloys_cost
 		}
 		cost = {
 			trigger = {
+				NOT = {
+					has_country_flag = flash_forge_hyper_relay_activated
+				}
 				country_uses_bio_ships = yes
 			}
 			alloys = @shrimpai_alloys_cost
@@ -32,6 +40,9 @@ hyper_relay = {
 		}
 		cost = {
 			trigger = {
+				NOT = {
+					has_country_flag = flash_forge_hyper_relay_activated
+				}
 				country_uses_bio_ships = yes
 			}
 			food = @shrimpai_alloys_cost
@@ -81,17 +92,87 @@ hyper_relay = {
 	}
 
 	possible = {
-		# exists = starbase # OVERWRITE sparsity / wild space support
-		custom_tooltip = {
-			fail_text = "requires_inside_border_or_subject"
-			OR = {
-				shrimpai_is_starless = yes # OVERWRITE sparsity / wild space support
-				is_inside_border = from
-				AND = {
-					exists = owner
-					owner = {
-						is_subject = yes
-						overlord = { is_same_value = from }
+		if = {
+			limit = {
+				from = {
+					is_nomadic = no
+				}
+			}
+			hidden_trigger = {
+				OR = {
+					exists = starbase
+					shrimpai_is_starless = yes # OVERWRITE sparsity / wild space support
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_inside_border_or_subject"
+				OR = {
+					shrimpai_is_starless = yes # OVERWRITE sparsity / wild space support
+					is_inside_border = from
+					AND = {
+						owner? = {
+							is_subject = yes
+							overlord = {
+								is_same_value = from
+							}
+						}
+					}
+					AND = {
+						from = {
+							has_menace_perk = menp_defender_galcom_2
+						}
+						solar_system.owner? = {
+							OR = {
+								has_defensive_pact = from
+								is_in_federation_with = from
+								from = {
+									has_subject = prev
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = requires_tier_2_waystation_on_wayline_or_subject
+				OR = {
+					shrimpai_is_starless = yes # OVERWRITE sparsity / wild space support
+					any_starbase_in_system = {
+						is_waystation_starbase = yes
+						owner? = {
+							is_same_value = from
+						}
+						any_starbase_in_network = {
+							has_starbase_size >= starbase_waystation_2
+							owner? = {
+								is_same_value = from
+							}
+						}
+					}
+					AND = {
+						exists = starbase
+						owner? = {
+							is_subject = yes
+							overlord = {
+								is_same_value = from
+							}
+						}
+					}
+					AND = {
+						from = {
+							has_menace_perk = menp_defender_galcom_2
+						}
+						solar_system.owner? = {
+							OR = {
+								has_defensive_pact = from
+								is_in_federation_with = from
+								from = {
+									has_subject = prev
+								}
+							}
+						}
 					}
 				}
 			}
@@ -108,25 +189,40 @@ hyper_relay = {
 					}
 				}
 				AND = {
-					exists = owner
-					owner = {
+					exists = starbase
+					owner? = {
 						is_subject = yes
-						overlord = { is_same_value = from }
+						overlord = {
+							is_same_value = from
+						}
+					}
+				}
+				AND = {
+					exists = starbase
+					from = {
+						has_menace_perk = menp_defender_galcom_2
+					}
+					solar_system.owner? = {
+						OR = {
+							has_defensive_pact = from
+							is_in_federation_with = from
+							from = {
+								has_subject = prev
+							}
+						}
 					}
 				}
 			}
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_hyper_relay"
-			NOR = {
-				has_megastructure = hyper_relay
-				has_megastructure = hyper_relay_ruined
-				has_megastructure = hyper_relay_restored
-			}
+			has_any_hyper_relay = no
 		}
 		custom_tooltip = {
 			fail_text = "requires_technology_hyper_relays"
-			from = { has_technology = tech_hyper_relays }
+			from = {
+				has_technology = tech_hyper_relays
+			}
 		}
 		custom_tooltip = {
 			fail_text = "requires_hyperlane"
@@ -134,6 +230,10 @@ hyper_relay = {
 				count > 0
 			}
 		}
+	}
+
+	context_menu_potential = {
+		has_any_hyper_relay = no
 	}
 
 	placement_rules = {			# those would be ignored since the hyper relay is being "free-placed" between the inner and outer radius of the system

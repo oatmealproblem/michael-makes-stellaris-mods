@@ -62,7 +62,7 @@ Caveats:
 
 [h1]Compatibility[/h1]
 [list]
-  [*] For Stellaris 4.3.*
+  [*] For Stellaris 4.4.*
   [*] NOT achievement compatible
   [*] Compatible with Planetary Diversity
   [*] Compatible with Real Space

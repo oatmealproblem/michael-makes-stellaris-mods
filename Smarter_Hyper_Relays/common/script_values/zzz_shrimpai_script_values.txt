@@ -42,8 +42,30 @@ shrimpai_ai_weight = { # OVERWRITE entire AI weight for main functionality of mo
 	# don't build if not target (on path, etc)
 	modifier = {
 		factor = 0
+		from = {
+			is_nomadic = no
+		}
 		NOT = {
 			shrimpai_is_ai_build_target = { COUNTRY = from }
+		}
+	}
+
+	# vanilla nomad behavior
+	modifier = {
+		factor = 0
+		from = {
+			is_nomadic = yes
+		}
+		NOT = {
+			any_fleet_in_system = {
+				OR = {
+					is_ship_size = starbase_waystation_2
+					is_ship_size = starbase_waystation_3
+				}
+				owner? = {
+					is_same_value = from
+				}
+			}
 		}
 	}
 }
